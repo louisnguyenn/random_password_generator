@@ -59,12 +59,15 @@ generatePassword = (length, includeLowercase, includeUppercase, includeNumbers, 
 
     for (let i = 0; i < length; i++)
     {
-        const randomIndex = Math.random() * allowedChars.length
+        const randomIndex = Math.floor(Math.random() * allowedChars.length);
+
+        // concating the password with the allowed characters
+        password += allowedChars[randomIndex];
     }
 
-    console.log(allowedChars);
+    // console.log(allowedChars);
 
-    return '';
+    return password;
 }
 
 const passwordLength = 12;
